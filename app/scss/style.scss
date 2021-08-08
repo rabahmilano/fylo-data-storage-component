@@ -1,0 +1,154 @@
+@import 'mixins', 'variables', 'globals';
+
+body {
+  background: url(../../images/bg-mobile.png) center/cover no-repeat;
+
+  @include breakpoint-up(large) {
+    background: url(../../images/bg-desktop.png) bottom left/100% 52.5% no-repeat $veryDarkBlue;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  padding: 3rem 0 5rem;
+
+  &>div {
+    padding: 2.5rem;
+    background-color: $darkBlue;
+    margin: 1rem 0;
+    border-radius: 10px;
+  }
+
+  & .fonctionality {
+    border-top-right-radius: 100px;
+
+    &__links {
+      margin-top: 1.5rem;
+      display: flex;
+    }
+
+    & .link {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: $veryDarkBlue;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  & .information {
+    &__info {
+      text-align: center;
+    }
+
+    &__tunel {
+      width: 100%;
+      height: 20px;
+      margin: 1rem 0 .5rem;
+      border-radius: 20px;
+      padding: 3px;
+      background-color: rgba($veryDarkBlue, 0.6);
+    }
+
+    &__slide {
+      height: 100%;
+      width: 81.5%;
+      border-radius: 14px;
+      background: linear-gradient(to right, $orange, $pink);
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        right: 3px;
+        bottom: 2px;
+        border-radius: 50%;
+        background-color: $paleBlue;
+      }
+    }
+
+    &__store {
+      font-size: 13px;
+      padding-bottom: 1rem;
+    }
+
+    &__numerique {
+      background-color: white;
+      color: $grayishBlue;
+      padding: 0.7rem 1.3rem;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 8px;
+      letter-spacing: 1px;
+      width: fit-content;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      & p {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .xlarge {
+        font-size: 2.5rem;
+        color: $veryDarkBlue;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  @include breakpoint-up(xlarge) {
+    max-width: 920px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 1.5rem;
+
+		.information {
+			height: 70%;
+			align-self: flex-end;
+
+			&__info {
+				text-align: left;
+			}
+
+			&__numerique {
+				left: inherit;
+				transform: translateX(0);
+				right: 2.5rem;
+				bottom: 100%;
+				transform: translateY(30%);
+
+				&::after {
+					content: "";
+					position: absolute;
+					right: 0;
+					border-top: 10px solid transparent;
+					border-bottom: 20px solid transparent;
+					border-right: 15px solid white;
+				}
+			}
+		}
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 11px;
+
+  & a {
+    color: $grayishBlue;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: white;
+    }
+  }
+}

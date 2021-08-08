@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+	position: relative;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	line-height: 1.3;
+	min-height: 100vh;
+	color: $paleBlue;
+	font-size: 14px;
+}
+
+.flex {
+	display: flex;
+
+	&-jc-c {
+		justify-content: center;
+	}
+
+	&-jc-sb {
+		justify-content: space-between;
+	}
+
+	&-ai-c {
+		align-items: center;
+	}
+}
+
+.bold {
+	font-weight: 700;
+}
